@@ -54,4 +54,16 @@ pub const Registers = struct {
         self.h = @truncate(value >> 8);
         self.l = @truncate(value & 0xFF);
     }
+
+    pub fn getFlag(self: *Registers, mask: u8) bool {
+        return (self.f & mask) != 0;
+    }
+
+    pub fn setFlag(self: *Registers, mask: u8, value: bool) void {
+        if (value) {
+            self.f |= mask;
+        } else {
+            self.f &= ~mask;
+        }
+    }
 };
