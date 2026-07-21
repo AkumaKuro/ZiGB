@@ -1,3 +1,10 @@
+pub const Flags = struct {
+    pub const ZERO: u8 = 0b1000_0000;
+    pub const SUBTRACT: u8 = 0b0100_0000;
+    pub const HALF_CARRY: u8 = 0b0010_0000;
+    pub const CARRY: u8 = 0b0001_0000;
+};
+
 pub const Registers = struct {
     a: u8 = 0,
     f: u8 = 0, // flags register, only top 4 bits used
